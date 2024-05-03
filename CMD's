@@ -1,1 +1,9 @@
-CM
+Diff All Commited Files
+
+git diff --name-only --cached
+
+
+git diff --name-only --cached | sort -n | xargs 
+
+
+sf deploy metadata -d force-app 
