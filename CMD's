@@ -6,7 +6,7 @@ git diff --name-only --cached | sort -n | xargs
 
 sf deploy metadata -d force-app
 
-git commit -m "Communicate Between Lightning Web Components"
+git commit -m "Jest Files Unit"
 
 git pull origin --rebase --autostash
 
