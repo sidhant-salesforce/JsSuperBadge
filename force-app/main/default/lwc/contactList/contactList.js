@@ -20,6 +20,8 @@ export default class ContactList extends LightningElement {
   contacts;
 
   get errors() {
-    return this.contacts.error ? reduceErrors(this.contacts.error) : [];
+    return this.contacts && this.contacts.error
+      ? reduceErrors(this.contacts.error)
+      : [];
   }
 }

@@ -10,4 +10,12 @@ public with sharing class AccountController {
             ORDER BY Name
         ];*/
     }
+    public static List<Account> getAccountList() {
+        return [
+            SELECT Name, AnnualRevenue, Industry
+            FROM Account
+            WITH SECURITY_ENFORCED
+            ORDER BY Name
+        ];
+    }
 }

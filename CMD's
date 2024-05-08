@@ -2,14 +2,21 @@ Diff All Commited Files
 
 git diff --name-only --cached
 
+git diff --name-only --cached | sort -n | xargs
 
-git diff --name-only --cached | sort -n | xargs 
-
-
-sf deploy metadata -d force-app 
-
+sf deploy metadata -d force-app
 
 git commit -m "Communicate Between Lightning Web Components"
 
+git pull origin --rebase --autostash
 
- git pull origin  --rebase --autostash
+git push origin
+
+export JAVA_HOME=/Users/gupta.sidhant/Desktop/Softwares/JRE/openjdk_17.0.10.0.1_17.48.52_x64
+
+% export NVM_DIR="$HOME/.nvm"            
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+npm run test:unit
+
+sf deploy metadata -d force-app

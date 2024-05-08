@@ -6,20 +6,22 @@ import getAccounts from "@salesforce/apex/AccountController.getAccounts";
 import { reduceErrors } from "c/ldsUtils";
 
 const COLUMNS = [
-    { label: "Account Name", fieldName: NAME_FIELD.fieldApiName, type: "text" },
-    {
-        label: "Annual Revenue",
-        fieldName: REVENUE_FIELD.fieldApiName,
-        type: "currency"
-    },
-    { label: "Industry", fieldName: INDUSTRY_FIELD.fieldApiName, type: "text" }
+  { label: "Account Name", fieldName: NAME_FIELD.fieldApiName, type: "text" },
+  {
+    label: "Annual Revenue",
+    fieldName: REVENUE_FIELD.fieldApiName,
+    type: "currency"
+  },
+  { label: "Industry", fieldName: INDUSTRY_FIELD.fieldApiName, type: "text" }
 ];
 export default class AccountList extends LightningElement {
-    columns = COLUMNS;
-    @wire(getAccounts)
-    accounts;
+  columns = COLUMNS;
+  @wire(getAccounts)
+  accounts;
 
-    get errors() {
-        return this.accounts.error ? reduceErrors(this.accounts.error) : [];
-    }
+  get errors() {
+    return this.accounts && this.accounts.error
+      ? reduceErrors(this.accounts.error)
+      : [];
+  }
 }
