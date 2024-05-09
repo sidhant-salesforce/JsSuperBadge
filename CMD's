@@ -20,3 +20,6 @@ export JAVA_HOME=/Users/gupta.sidhant/Desktop/Softwares/JRE/openjdk_17.0.10.0.1_
 npm run test:unit
 
 sf deploy metadata -d force-app
+
+
+prettier  force-app/main/default/classes/AccountController.cls
