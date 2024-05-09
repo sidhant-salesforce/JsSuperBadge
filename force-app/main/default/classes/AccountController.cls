@@ -10,6 +10,8 @@ public with sharing class AccountController {
             ORDER BY Name
         ];*/
     }
+
+    @AuraEnabled(cacheable=true)
     public static List<Account> getAccountList() {
         return [
             SELECT Name, AnnualRevenue, Industry
