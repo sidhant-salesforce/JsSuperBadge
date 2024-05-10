@@ -6,7 +6,7 @@ git diff --name-only --cached | sort -n | xargs
 
 sf deploy metadata -d force-app
 
-git commit -m "Jest Files Unit"
+git commit -m "Add Lwc Package" &&  git push origin
 
 git pull origin --rebase --autostash
 
@@ -23,3 +23,16 @@ sf deploy metadata -d force-app
 
 
 prettier  force-app/main/default/classes/AccountController.cls
+
+prettier --plugin=prettier-plugin-apex /Users/gupta.sidhant/Desktop/SfProjects/JSSuperbadge/force-app/main/default/classes/AccountController.cls
+
+
+prettier --plugin=prettier-plugin-apex ...
+
+
+prettier --plugin=prettier-plugin-apex --write force-app/main/default/classes/AccountController.cls
+
+
+sf project retrieve start --target-org SuperBadge --package-name LWCPackage
+sf project deploy start --target-org SuperBadge --package-name LWCPackage
+sf project deploy start --target-org SuperBadge --source-dir LWCPackage 
